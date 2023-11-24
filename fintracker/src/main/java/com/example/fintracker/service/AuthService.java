@@ -17,8 +17,6 @@ public class AuthService {
 
     public boolean authenticate(String email, String password) {
         User user = userService.getUserByEmail(email);
-
-        // Verifique se o usuário existe e a senha está correta
         return user != null && user.getPassword().equals(password);
     }
 }

@@ -30,6 +30,7 @@ public class UserController {
     public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
         if (authService.authenticate(email, password)) {
             return ResponseEntity.ok("Login successful");
+
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
         }

@@ -27,7 +27,10 @@ public class UserController {
         this.authService = authService;
     }
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
+    public ResponseEntity<String> login(@RequestBody User user) {
+        String email = user.getEmail();
+        String password = user.getPassword();
+
         if (authService.authenticate(email, password)) {
             return ResponseEntity.ok("Login successful");
         } else {

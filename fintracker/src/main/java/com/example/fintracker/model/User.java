@@ -5,22 +5,29 @@ import lombok.Getter;
 
 import java.util.Date;
 
-@Table(name = "user")
-@Entity(name = "users")
+@Table(name = "users")
+@Entity
+
 
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @Column(name = "email")
     @Getter
     private String email;
+    @Column(name = "password")
     @Getter
     private String password;
+    @Column(name = "username")
     @Getter
     private String username;
+    @Column(name = "cpf")
     @Getter
     private String cpf;
+    @Column(name = "date_of_birth")
     @Getter
     private Date dateOfBirth;
 

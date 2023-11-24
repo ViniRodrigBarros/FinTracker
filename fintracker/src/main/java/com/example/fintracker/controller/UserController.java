@@ -51,9 +51,9 @@ public class UserController {
         List<User> users = userService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
-    @GetMapping("/{username}")
-    public ResponseEntity<User> getUser(@PathVariable String username) {
-        User user = userService.getUserByUsername(username);
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUser(@PathVariable String id) {
+        User user = userService.getUserById(Long.parseLong(id));
         if (user != null) {
             return new ResponseEntity<>(user, HttpStatus.OK);
         } else {

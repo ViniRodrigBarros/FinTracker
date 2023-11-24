@@ -1,0 +1,28 @@
+### Backend ###
+fintracker/target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### Frontend ###
+fintracker_app/node_modules/
+fintracker_app/.expo/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+
+### VS Code ###
+.vscode/

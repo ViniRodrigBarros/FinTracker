@@ -1,22 +1,40 @@
 import { StyleSheet, View, Image } from "react-native";
-import { Text, TextInput, Button } from "react-native-paper";
+import { TextInput, Button } from "react-native-paper";
 import { useState } from "react";
 import Logo from "../../../assets/logo.png";
+import axios from "axios";
+import qs from "qs"; // Importe o módulo qs
+
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    navigation.navigate("Main");
-    /*
-    if (email === "thiagoaciole7@gmail.com" && password === "1234") {
-      
-      setEmail("");
-      setPassword("");
-    } else {
-      alert("Credenciais inválidas");
-    }*/
-  };
+  async function handleLogin() {
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/users/login",
+        qs.stringify({
+          email: email,
+          password: password,
+        }),
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
+
+      if (response.status == 200) {
+    
+        navigation.navigate("Main");
+      } else {
+
+        console.error("Falha na autenticação");
+      }
+    } catch (error) {
+      console.error("Erro ao tentar autenticar", error);
+    }
+  }
 
   return (
     <View style={styles.container}>

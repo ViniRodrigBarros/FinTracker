@@ -1,4 +1,4 @@
-package com.example.fintracker.model;
+package com.example.fintracker.filter.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

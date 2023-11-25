@@ -1,6 +1,6 @@
 package com.example.fintracker.controller;
 
-import com.example.fintracker.model.User;
+import com.example.fintracker.filter.model.User;
 import com.example.fintracker.service.AuthService;
 import com.example.fintracker.service.UserService;
 
@@ -38,14 +38,8 @@ public class UserController {
         }
     }
     @PostMapping("/register")
-    public ResponseEntity<User> registerUser(
-            @RequestParam String email,
-            @RequestParam String username,
-            @RequestParam String password,
-            @RequestParam String cpf,
-            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateOfBirth
+    public ResponseEntity<User> registerUser(@RequestBody User newUser
     ) {
-        User newUser = userService.registerUser(email, username, password, cpf, dateOfBirth);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 

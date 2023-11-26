@@ -1,7 +1,12 @@
 package com.example.fintracker.filter.dto.request;
 
-import javax.xml.crypto.Data;
+import com.example.fintracker.filter.model.Transaction;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.xml.crypto.Data;
+@Getter
+@Setter
 public class RequestTransactionDTO {
 
     private Integer user_id;
@@ -9,4 +14,6 @@ public class RequestTransactionDTO {
     private String categoria;
     private String tipo;
     private Data data;
+
+
 }

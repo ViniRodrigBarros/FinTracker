@@ -1,14 +1,14 @@
 package com.example.fintracker.filter.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
-import javax.persistence.*;
+
 import javax.xml.crypto.Data;
 
 @Entity
 @Table(name = "transacao")
+@NoArgsConstructor
 @Getter
 @Setter
 public class Transaction {
@@ -29,8 +29,8 @@ public class Transaction {
     @Column(name = "tipo",nullable = true)
     private String tipo;
 
-    @Column(name = "data",nullable = false)
-    private Data data;
+    //@Column(name = "data",nullable = false)
+    //private Data data;
 
     @Builder
     public Transaction(Integer user_id, Float valor, String categoria, String tipo, Data data) {
@@ -38,6 +38,6 @@ public class Transaction {
         this.valor = valor;
         this.categoria = categoria;
         this.tipo = tipo;
-        this.data = data;
+        //this.data = data;
     }
 }

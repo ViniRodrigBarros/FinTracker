@@ -15,7 +15,9 @@ public interface TransactionService {
 
     TransactionResponseDTO register(RequestTransactionDTO transactionDTO);
 
-    TransactionResponseDTO update(RequestTransactionDTO transactionDTO, Long id);
+    TransactionResponseDTO update(Long id,RequestTransactionDTO transactionDTO);
+
+    String delete(Long id);
 
 
 

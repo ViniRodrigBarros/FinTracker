@@ -1,16 +1,20 @@
 package com.example.fintracker.filter.model;
 
+
+
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.Date;
 
-import javax.xml.crypto.Data;
 
 @Entity
 @Table(name = "transacao")
-@NoArgsConstructor
+
 @Getter
-@Setter
+
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,15 +33,44 @@ public class Transaction {
     @Column(name = "tipo",nullable = true)
     private String tipo;
 
-    //@Column(name = "data",nullable = false)
-    //private Data data;
+    @Column(name = "data")
+    @Getter
+    private Date data;
 
-    @Builder
+
     public Transaction(Integer user_id, Float valor, String categoria, String tipo, Data data) {
         this.user_id = user_id;
         this.valor = valor;
         this.categoria = categoria;
         this.tipo = tipo;
         //this.data = data;
+    }
+
+    public Transaction() {
+
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
+    }
+
+    public void setValor(Float valor) {
+        this.valor = valor;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
     }
 }

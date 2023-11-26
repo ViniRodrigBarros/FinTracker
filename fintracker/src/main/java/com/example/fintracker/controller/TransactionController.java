@@ -33,7 +33,7 @@ public class TransactionController {
         return new ResponseEntity<>(transactions, HttpStatus.OK);
     }
     @PostMapping("/register")
-    public ResponseEntity<Transaction> registerUser(@RequestBody Transaction transaction
+    public ResponseEntity<Transaction> registerTransaction(@RequestBody Transaction transaction
     ) {
         return new ResponseEntity<>(transaction, HttpStatus.CREATED);
     }

@@ -28,7 +28,7 @@ public class TransactionService {
     public Optional<Transaction> getTransactionById(Long id ) {
         return transactionRepository.findById(id);
     }
-    public Transaction registerTransaction( String tipo, float valor, int userId, String categoria, Date data) {
+    public  Transaction registerTransaction(String tipo, float valor, int userId, String categoria, Date data) {
         Transaction newTransaction = new Transaction();
         newTransaction.setTipo(tipo);
         newTransaction.setValor(valor);
@@ -36,7 +36,7 @@ public class TransactionService {
         newTransaction.setCategoria(categoria);
         newTransaction.setData(data);
 
-        return transactionRepository.save(newTransaction);
+         return transactionRepository.save(newTransaction);
     }
 
 

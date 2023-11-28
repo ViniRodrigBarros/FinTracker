@@ -33,10 +33,17 @@ public class TransactionController {
         return new ResponseEntity<>(transactions, HttpStatus.OK);
     }
     @PostMapping("/register")
-    public ResponseEntity<Transaction> registerTransaction(@RequestBody Transaction transaction
-    ) {
-        return new ResponseEntity<>(transaction, HttpStatus.CREATED);
+    public ResponseEntity<Transaction> registerTransaction(@RequestBody Transaction transaction) {
+        Transaction newTransaction = transactionService.registerTransaction(
+                transaction.getTipo(),
+                transaction.getValor(),
+                transaction.getUser_id(),
+                transaction.getCategoria(),
+                transaction.getData()
+        );
+        return new ResponseEntity<>(newTransaction, HttpStatus.CREATED);
     }
+
 
 
 

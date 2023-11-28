@@ -40,6 +40,7 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody User newUser
     ) {
+
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 

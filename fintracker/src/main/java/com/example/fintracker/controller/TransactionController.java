@@ -47,12 +47,12 @@ public class TransactionController {
     }
 
     @GetMapping("/byUserId")
-    public ResponseEntity<List<Transaction>> getTransactionByUserId(@RequestBody int userID) {
+    public ResponseEntity<List<Transaction>> getTransactionByUserId(@RequestBody int userId) {
         List<Transaction> transactions = transactionService.getAllTransactions();
 
         List<Transaction> transactionsByUser = new ArrayList<>();
         for(int i = 0;i<transactions.size();i++){
-           if(transactions.get(i).getUser_id() == userID ){
+           if(transactions.get(i).getUser_id() == userId ){
                transactionsByUser.add(transactions.get(i));
            }
         }

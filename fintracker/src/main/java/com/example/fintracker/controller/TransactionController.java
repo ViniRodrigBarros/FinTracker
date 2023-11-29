@@ -46,8 +46,8 @@ public class TransactionController {
 
     }
 
-    @GetMapping("/byUserId")
-    public ResponseEntity<List<Transaction>> getTransactionByUserId(@RequestBody int userId) {
+    @GetMapping("/byUserId/{userId}")
+    public ResponseEntity<List<Transaction>> getTransactionByUserId(@PathVariable int userId) {
         List<Transaction> transactions = transactionService.getAllTransactions();
 
         List<Transaction> transactionsByUser = new ArrayList<>();
@@ -57,11 +57,9 @@ public class TransactionController {
            }
         }
 
+
         return new ResponseEntity<>(transactionsByUser, HttpStatus.OK);
     }
-
-
-
 
 
 }

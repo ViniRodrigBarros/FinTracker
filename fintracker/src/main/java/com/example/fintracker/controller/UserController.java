@@ -27,12 +27,15 @@ public class UserController {
         this.authService = authService;
     }
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User user) {
+    public ResponseEntity<?> login(@RequestBody User user) {
         String email = user.getEmail();
         String password = user.getPassword();
 
         if (authService.authenticate(email, password)) {
-            return ResponseEntity.ok("Login successful");
+            User userDetails = userService.getUserByEmail(email);
+
+            return new  ResponseEntity<>(userDetails,HttpStatus.OK);
+
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
         }

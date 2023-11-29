@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -44,6 +45,21 @@ public class TransactionController {
         return new ResponseEntity<>(newTransaction, HttpStatus.CREATED);
 
     }
+
+    @GetMapping("/byUserId")
+    public ResponseEntity<List<Transaction>> getTransactionByUserId(@RequestBody int userID) {
+        List<Transaction> transactions = transactionService.getAllTransactions();
+
+        List<Transaction> transactionsByUser = new ArrayList<>();
+        for(int i = 0;i<transactions.size();i++){
+           if(transactions.get(i).getUser_id() == userID ){
+               transactionsByUser.add(transactions.get(i));
+           }
+        }
+
+        return new ResponseEntity<>(transactionsByUser, HttpStatus.OK);
+    }
+
 
 
 

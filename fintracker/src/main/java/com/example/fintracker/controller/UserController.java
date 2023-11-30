@@ -1,5 +1,6 @@
 package com.example.fintracker.controller;
 
+import com.example.fintracker.filter.model.Transaction;
 import com.example.fintracker.filter.model.User;
 import com.example.fintracker.service.AuthService;
 import com.example.fintracker.service.UserService;
@@ -43,8 +44,18 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody User newUser
     ) {
+        System.out.println(newUser.getPassword());
+        System.out.println("test");
+        User user = userService.registerUser(
+                newUser.getEmail(),
+                newUser.getPassword(),
+                newUser.getUsername(),
+                newUser.getCpf(),
+                newUser.getDateOfBirth()
 
-        return new ResponseEntity<>(newUser, HttpStatus.CREATED);
+        );
+
+        return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
     @GetMapping("/")

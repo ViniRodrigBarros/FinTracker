@@ -48,6 +48,7 @@ public class TransactionController {
 
     }
 
+
     @GetMapping("/byUserId/{userId}")
     public ResponseEntity<List<Transaction>> getTransactionByUserId(@PathVariable int userId) {
         List<Transaction> transactions = transactionService.getAllTransactions();

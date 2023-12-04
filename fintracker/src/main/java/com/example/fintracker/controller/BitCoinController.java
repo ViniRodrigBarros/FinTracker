@@ -1,5 +1,6 @@
 package com.example.fintracker.controller;
 
+import com.example.fintracker.filter.adapter.BitcoinDataAdapter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,24 +8,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-//IMPLEMENTAR o ADAPTER
-//IMPLEMENTAR TEMPLATE METHOD COM MOEDAS DIFERENTES
 @RestController
-@RequestMapping("/bitcoin-price")
+@RequestMapping("/bitcoin")
 public class BitCoinController {
 
     @Value("${coin.gecko.api.url}")
     private String coinGeckoApiUrl;
 
     @GetMapping
-    public ResponseEntity<String> getBitcoinPrice() {
-        // O endpoint da API CoinGecko para o preço atual do Bitcoin em USD
-        String apiUrl = coinGeckoApiUrl + "/simple/price?ids=bitcoin&vs_currencies=usd";
+    public ResponseEntity<String> getBitcoinInfo() {
+        // O endpoint da API CoinGecko para informações detalhadas sobre o Bitcoin
+        String apiUrl = coinGeckoApiUrl + "/coins/bitcoin";
 
         // Use RestTemplate para fazer uma solicitação GET à API
         RestTemplate restTemplate = new RestTemplate();
-        String bitcoinPrice = restTemplate.getForObject(apiUrl, String.class);
+        String bitcoinInfo = restTemplate.getForObject(apiUrl, String.class);
 
-        return ResponseEntity.ok(bitcoinPrice);
+        // Adaptar e filtrar as informações usando o Adapter
+        BitcoinDataAdapter bitcoinDataAdapter = new BitcoinDataAdapter();
+        String filteredInfo = bitcoinDataAdapter.adapt(bitcoinInfo);
+
+        return ResponseEntity.ok(filteredInfo);
     }
 }

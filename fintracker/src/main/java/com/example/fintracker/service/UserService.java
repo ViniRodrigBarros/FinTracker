@@ -1,9 +1,8 @@
 package com.example.fintracker.service;
 
 
-import com.example.fintracker.filter.model.Transaction;
 import com.example.fintracker.filter.model.User;
-import com.example.fintracker.repository.UserRepository;
+import com.example.fintracker.controller.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

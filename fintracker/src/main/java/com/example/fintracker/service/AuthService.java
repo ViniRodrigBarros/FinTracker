@@ -29,4 +29,6 @@ public class AuthService {
         User user = userService.getUserByEmail(email);
         return user != null && user.getPassword().equals(password);
     }
+
+
 }

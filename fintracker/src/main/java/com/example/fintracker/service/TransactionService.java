@@ -4,6 +4,8 @@ package com.example.fintracker.service;
 import com.example.fintracker.model.Transaction;
 import com.example.fintracker.repository.TransactionRepository;
 
+import com.example.fintracker.filter.observer.TransactionObservable;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class TransactionService {
+public class TransactionService extends TransactionObservable {
 
     private final TransactionRepository transactionRepository;
 
@@ -36,6 +38,7 @@ public class TransactionService {
         newTransaction.setCategoria(categoria);
         newTransaction.setData(data);
 
+        notifyObservers(newTransaction);
          return transactionRepository.save(newTransaction);
     }
 

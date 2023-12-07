@@ -7,6 +7,7 @@ import com.example.fintracker.model.Transaction;
 
 import com.example.fintracker.strategy.CategoriaStrategy;
 import com.example.fintracker.service.TransactionService;
+import com.example.fintracker.filter.observer.PrintTransactionObserver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,6 +43,7 @@ public class TransactionController {
                 transaction.getCategoria(),
                 transaction.getData()
         );
+        transactionService.addObserver(new PrintTransactionObserver(),newTransaction);
         return new ResponseEntity<>(newTransaction, HttpStatus.CREATED);
 
     }

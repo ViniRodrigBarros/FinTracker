@@ -1,6 +1,7 @@
 package com.example.fintracker.filter.observer;
 import com.example.fintracker.filter.interfaces.TransactionObserver;
-import com.example.fintracker.filter.model.Transaction;
+import com.example.fintracker.model.Transaction;
+
 
 import java.util.ArrayList;
 import java.util.List;

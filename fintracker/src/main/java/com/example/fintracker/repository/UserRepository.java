@@ -1,4 +1,4 @@
-package com.example.fintracker.controller.repository;
+package com.example.fintracker.repository;
 
 
 import com.example.fintracker.model.User;

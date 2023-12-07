@@ -3,7 +3,7 @@ package com.example.fintracker.adapter;
 import com.example.fintracker.model.Account;
 import com.example.fintracker.model.OpenFinanceAPI;
 import com.example.fintracker.model.Transaction;
-import com.example.fintracker.service.AccountService;
+import com.example.fintracker.interfaces.AccountService;
 import com.example.fintracker.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

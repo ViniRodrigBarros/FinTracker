@@ -1,4 +1,4 @@
-package com.example.fintracker.service;
+package com.example.fintracker.interfaces;
 
 import com.example.fintracker.model.Account;
 

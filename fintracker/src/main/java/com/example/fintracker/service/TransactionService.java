@@ -4,7 +4,7 @@ package com.example.fintracker.service;
 import com.example.fintracker.model.Transaction;
 import com.example.fintracker.repository.TransactionRepository;
 
-import com.example.fintracker.filter.observer.TransactionObservable;
+import com.example.fintracker.observer.TransactionObservable;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.example.fintracker.filter.interfaces;
+package com.example.fintracker.interfaces;
 
 
 import com.example.fintracker.model.Transaction;

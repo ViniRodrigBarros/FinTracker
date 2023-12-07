@@ -1,5 +1,5 @@
-package com.example.fintracker.filter.observer;
-import com.example.fintracker.filter.interfaces.TransactionObserver;
+package com.example.fintracker.observer;
+import com.example.fintracker.interfaces.TransactionObserver;
 import com.example.fintracker.model.Transaction;
 
 

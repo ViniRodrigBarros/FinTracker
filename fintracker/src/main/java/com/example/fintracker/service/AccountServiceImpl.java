@@ -1,6 +1,6 @@
 package com.example.fintracker.service;
 import com.example.fintracker.model.Account;
-import com.example.fintracker.service.AccountService;
+import com.example.fintracker.interfaces.AccountService;
 import org.springframework.stereotype.Service;
 
 import jakarta.persistence.*;

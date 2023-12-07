@@ -2,7 +2,7 @@ package com.example.fintracker.service;
 
 
 import com.example.fintracker.model.Transaction;
-import com.example.fintracker.repository.TransactionRepository;
+import com.example.fintracker.controller.repository.TransactionRepository;
 
 import com.example.fintracker.observer.TransactionObservable;
 

@@ -1,4 +1,4 @@
-package com.example.fintracker.dto.response;
+package com.example.fintracker.controller.dto.response;
 
 import com.example.fintracker.model.Transaction;
 

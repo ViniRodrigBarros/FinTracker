@@ -2,7 +2,7 @@ package com.example.fintracker.controller;
 
 
 import com.example.fintracker.adapter.OpenFinanceApiAdapter;
-import com.example.fintracker.dto.response.ClassifiedGainsResponse;
+import com.example.fintracker.controller.dto.response.ClassifiedGainsResponse;
 import com.example.fintracker.model.Transaction;
 
 import com.example.fintracker.strategy.CategoriaStrategy;

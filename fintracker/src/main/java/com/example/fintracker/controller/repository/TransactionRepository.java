@@ -1,4 +1,4 @@
-package com.example.fintracker.repository;
+package com.example.fintracker.controller.repository;
 
 import com.example.fintracker.model.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;

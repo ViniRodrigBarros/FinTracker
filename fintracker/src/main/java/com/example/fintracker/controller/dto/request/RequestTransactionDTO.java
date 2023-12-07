@@ -1,4 +1,4 @@
-package com.example.fintracker.dto.request;
+package com.example.fintracker.controller.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;

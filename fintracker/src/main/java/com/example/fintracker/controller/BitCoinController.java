@@ -1,6 +1,6 @@
 package com.example.fintracker.controller;
 
-import com.example.fintracker.filter.adapter.BitcoinDataAdapter;
+import com.example.fintracker.adapter.BitcoinDataAdapter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

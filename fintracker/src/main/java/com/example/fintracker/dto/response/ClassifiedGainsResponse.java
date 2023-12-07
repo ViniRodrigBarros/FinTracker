@@ -1,6 +1,6 @@
-package com.example.fintracker.filter.dto.response;
+package com.example.fintracker.dto.response;
 
-import com.example.fintracker.filter.model.Transaction;
+import com.example.fintracker.model.Transaction;
 
 import java.util.List;
 

@@ -1,21 +1,19 @@
 package com.example.fintracker.controller;
 
 
-import com.example.fintracker.filter.dto.response.ClassifiedGainsResponse;
-import com.example.fintracker.filter.model.Transaction;
+import com.example.fintracker.adapter.OpenFinanceApiAdapter;
+import com.example.fintracker.dto.response.ClassifiedGainsResponse;
+import com.example.fintracker.model.Transaction;
 
-import com.example.fintracker.filter.strategy.CategoriaStrategy;
-import com.example.fintracker.service.transaction.TransactionService;
+import com.example.fintracker.strategy.CategoriaStrategy;
+import com.example.fintracker.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/transaction")
@@ -23,12 +21,12 @@ import java.util.Optional;
 public class TransactionController {
 
     private final TransactionService transactionService;
-
+    private final OpenFinanceApiAdapter openFinanceApiAdapter;
 
     @Autowired
-    public TransactionController(TransactionService transactionService) {
+    public TransactionController(TransactionService transactionService, OpenFinanceApiAdapter openFinanceApiAdapter) {
         this.transactionService = transactionService;
-
+        this.openFinanceApiAdapter = openFinanceApiAdapter;
     }
     @GetMapping("/")
     public ResponseEntity<List<Transaction>> getAllTransactions() {
@@ -51,6 +49,8 @@ public class TransactionController {
 
     @GetMapping("/byUserId/{userId}")
     public ResponseEntity<List<Transaction>> getTransactionByUserId(@PathVariable int userId) {
+        openFinanceApiAdapter.synchronizeDataForUser((long) userId);
+
         List<Transaction> transactions = transactionService.getAllTransactions();
 
         List<Transaction> transactionsByUser = new ArrayList<>();

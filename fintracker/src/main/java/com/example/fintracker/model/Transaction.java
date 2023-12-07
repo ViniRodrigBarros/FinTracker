@@ -1,4 +1,4 @@
-package com.example.fintracker.filter.model;
+package com.example.fintracker.model;
 
 
 

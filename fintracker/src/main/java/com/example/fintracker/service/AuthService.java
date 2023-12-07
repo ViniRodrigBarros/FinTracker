@@ -1,14 +1,12 @@
 package com.example.fintracker.service;
 
-import com.example.fintracker.filter.model.User;
-import com.example.fintracker.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.fintracker.model.User;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AuthService {
 
-    private static AuthService instance;
+    private static volatile AuthService instance;
 
     private final UserService userService;
 

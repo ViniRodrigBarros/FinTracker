@@ -1,7 +1,7 @@
-package com.example.fintracker.service.transaction;
+package com.example.fintracker.service;
 
 
-import com.example.fintracker.filter.model.Transaction;
+import com.example.fintracker.model.Transaction;
 import com.example.fintracker.repository.TransactionRepository;
 
 

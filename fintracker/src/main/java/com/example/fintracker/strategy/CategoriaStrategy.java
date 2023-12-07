@@ -1,6 +1,6 @@
-package com.example.fintracker.filter.strategy;
+package com.example.fintracker.strategy;
 
-import com.example.fintracker.filter.model.Transaction;
+import com.example.fintracker.model.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,6 @@ public class CategoriaStrategy {
             } else if ("gasto".equalsIgnoreCase(transaction.getCategoria())) {
                 gastos.add(transaction);
             }
-            // Pode adicionar mais condições para outras categorias, se necessário
         }
 
         return new SeparatedTransactions(ganhos, gastos);

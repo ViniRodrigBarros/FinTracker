@@ -1,6 +1,6 @@
-package com.example.fintracker.filter.managers;
+package com.example.fintracker.managers;
 
-import com.example.fintracker.filter.model.User;
+import com.example.fintracker.model.User;
 
 import java.util.Date;
 

@@ -1,6 +1,5 @@
-package com.example.fintracker.filter.dto.request;
+package com.example.fintracker.dto.request;
 
-import com.example.fintracker.filter.model.Transaction;
 import lombok.Getter;
 import lombok.Setter;
 

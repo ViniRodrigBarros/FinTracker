@@ -1,4 +1,4 @@
-package com.example.fintracker.filter.adapter;
+package com.example.fintracker.adapter;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

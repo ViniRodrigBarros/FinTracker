@@ -1,4 +1,4 @@
-package com.example.fintracker.filter.model;
+package com.example.fintracker.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -67,7 +67,7 @@ public class User {
         this.id = id;
     }
 
-    public Long getId() {
-        return id;
+    public Integer getId() {
+        return Math.toIntExact(id);
     }
 }
